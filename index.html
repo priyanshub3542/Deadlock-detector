@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deadlock Detection Simulator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Deadlock Detection Simulator</h1>
+    
+    <label>Select Algorithm:</label>
+    <select id="algorithm">
+      <option value="wfg">Wait-for Graph</option>
+      <option value="banker">Banker's Algorithm</option>
+    </select>
+
+    <div id="inputs">
+      <textarea id="inputData" rows="8" placeholder="For WFG: Enter edges like '0 1' (P0 waits for P1), one per line.&#10;For Banker's: Use the JSON format (see README)."></textarea>
+    </div>
+
+    <button onclick="runDetection()">Run Detection</button>
+
+    <div id="result"></div>
+    <div id="cy"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
